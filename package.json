@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc",
-    "runtest": "mocha SeleniumDemo.test.js",
-    "test": "./node_modules/mocha/bin/_mocha lib/test/**/*.js --reporter mochawesome --reporter-options reportDir=TestResults"
+    "test": "mocha SeleniumDemo.test.js",
+    "testrail-tracked": "mocha SeleniumDemo.test.js --reporter mocha-testrail-reporter --reporter-options domain=bitly.testrail.io,username=USERNAME,password=PASSWORD,projectId=9,suiteId=31s"
   },
   "repository": {
     "type": "git",
