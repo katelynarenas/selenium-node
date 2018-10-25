@@ -2,11 +2,11 @@
   "name": "Selenium",
   "version": "1.0.0",
   "description": "Sample project which shows Typescript testing with Mocha, Chai, Selenium",
-  "main": "index.js",
+  "main": "index.js"
   "scripts": {
     "compile": "tsc",
-    "test": "mocha SeleniumDemo.test.js",
-    "testrail-tracked": "mocha SeleniumDemo.test.js --reporter mocha-testrail-reporter --reporter-options domain=bitly.testrail.io,username=USERNAME,password=PASSWORD,projectId=9,suiteId=31s"
+    "test": "mocha-headless-chrome -f SeleniumDemo.test.js",
+    "testrail-tracked": "mocha-headless-chrome -f SeleniumDemo.test.js --reporter mocha-testrail-reporter --reporter-options domain=bitly.testrail.io,username=USERNAME,password=PASSWORD,projectId=9,suiteId=31s"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,8 @@
   "homepage": "https://github.com/nilaydshah/MochaTypescriptTest-101#readme",
   "dependencies": {
     "@types/selenium-webdriver": "^3.0.12",
+    "chromedriver": "^2.43.0",
+    "mocha-headless-chrome": "^2.0.1",
     "typescript": "^2.6.1"
   },
   "devDependencies": {
@@ -38,10 +40,8 @@
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-typescript": "^3.2.3",
-    "mocha": "^4.0.1",
-    "mocha-testrail-advanced-reporter": "^1.0.1",
-    "mocha-testrail-reporter": "^1.0.12",
+    "mocha": "^3.5.3",
     "mochawesome": "^2.3.1",
-    "selenium-webdriver": "^3.0.1"
+    "selenium-webdriver": "^3.6.0"
   }
 }

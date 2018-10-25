@@ -9,10 +9,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var webdriver = __importStar(require("selenium-webdriver"));
 var chai_1 = require("chai");
-var fs = __importStar(require("fs"));
 require("mocha");
 chai_1.should();
-// skipping this test run until configuring headless chrome for travis CI
 describe('Selenium Demo Test Suite', function () {
     var driver;
     // time out for test execution
@@ -31,11 +29,11 @@ describe('Selenium Demo Test Suite', function () {
         if (testCaseStatus === 'failed') {
             console.log("Test: " + testCaseName + ", Status: Failed!");
             // capturing screenshot if test fails
-            driver.takeScreenshot().then(function (data) {
-                var screenshotPath = "./TestResults/Screenshots/" + testCaseName + ".png";
-                console.log("Saving Screenshot as: " + screenshotPath);
-                fs.writeFileSync(screenshotPath, data, 'base64');
-            });
+            // driver.takeScreenshot().then((data) => {
+            //     let screenshotPath = `./TestResults/Screenshots/${testCaseName}.png`;
+            //     console.log(`Saving Screenshot as: ${screenshotPath}`);
+            //     fs.writeFileSync(screenshotPath, data, 'base64');
+            // });
         }
         else if (testCaseStatus === 'passed') {
             console.log("Test: " + testCaseName + ", Status: Passed!");

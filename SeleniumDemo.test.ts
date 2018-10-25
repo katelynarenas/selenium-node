@@ -24,11 +24,11 @@ describe('Selenium Demo Test Suite', function () {
         if (testCaseStatus === 'failed') {
             console.log(`Test: ${testCaseName}, Status: Failed!`);
             // capturing screenshot if test fails
-            driver.takeScreenshot().then((data) => {
-                let screenshotPath = `./TestResults/Screenshots/${testCaseName}.png`;
-                console.log(`Saving Screenshot as: ${screenshotPath}`);
-                fs.writeFileSync(screenshotPath, data, 'base64');
-            });
+            // driver.takeScreenshot().then((data) => {
+            //     let screenshotPath = `./TestResults/Screenshots/${testCaseName}.png`;
+            //     console.log(`Saving Screenshot as: ${screenshotPath}`);
+            //     fs.writeFileSync(screenshotPath, data, 'base64');
+            // });
         } else if (testCaseStatus === 'passed') {
             console.log(`Test: ${testCaseName}, Status: Passed!`);
         } else {
