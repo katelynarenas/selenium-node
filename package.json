@@ -2,7 +2,7 @@
   "name": "Selenium",
   "version": "1.0.0",
   "description": "Sample project which shows Typescript testing with Mocha, Chai, Selenium",
-  "main": "index.js"
+  "main": "index.js",
   "scripts": {
     "compile": "tsc",
     "test": "mocha-headless-chrome -f SeleniumDemo.test.js",
