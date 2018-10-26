@@ -1,5 +1,6 @@
 import * as webdriver from 'selenium-webdriver';
 import { should } from 'chai';
+import chrome from 'selenium-webdriver/chrome';
 import * as fs from 'fs';
 import 'mocha';
 should();
@@ -12,6 +13,8 @@ describe('Selenium Demo Test Suite', function () {
     before(function () {
         // initializing chrome driver
         driver = new webdriver.Builder()
+            .forBrowser('chrome')
+            .setChromeOptions(new chrome.Options().headless())
             .withCapabilities(webdriver.Capabilities.chrome())
             .build();
         // maximizing chrome browser

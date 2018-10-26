@@ -6,13 +6,16 @@ var __importStar = (this && this.__importStar) || function (mod) {
     result["default"] = mod;
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var webdriver = __importStar(require("selenium-webdriver"));
 var chai_1 = require("chai");
+var chrome_1 = __importDefault(require("selenium-webdriver/chrome"));
 var fs = __importStar(require("fs"));
 require("mocha");
 chai_1.should();
-// skipping this test run until configuring headless chrome for travis CI
 describe('Selenium Demo Test Suite', function () {
     var driver;
     // time out for test execution
@@ -20,6 +23,8 @@ describe('Selenium Demo Test Suite', function () {
     before(function () {
         // initializing chrome driver
         driver = new webdriver.Builder()
+            .forBrowser('chrome')
+            .setChromeOptions(new chrome_1.default.Options().headless())
             .withCapabilities(webdriver.Capabilities.chrome())
             .build();
         // maximizing chrome browser
